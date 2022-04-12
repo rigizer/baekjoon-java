@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 public class BOJ2669 {
 	static int[][] arr = new int[101][101];
 	
-	private static void calc(int x1, int x2, int y1, int y2) {
+	private static void calc(int x1, int y1, int x2, int y2) {
 		for (int x = x1; x < x2; x++) {
 			for (int y = y1; y < y2; y++) {
 				arr[x][y] = 1;
@@ -18,8 +18,8 @@ public class BOJ2669 {
 	private static int sum() {
 		int sum = 0;
 		
-		for (int x = 0; x <= 100; x++) {
-			for (int y = 0; y <= 100; y++) {
+		for (int x = 1; x <= 100; x++) {
+			for (int y = 1; y <= 100; y++) {
 				sum += arr[x][y];
 			}
 		}
@@ -34,11 +34,11 @@ public class BOJ2669 {
 			StringTokenizer st = new StringTokenizer(br.readLine());
 			
 			int x1 = Integer.parseInt(st.nextToken());
-			int x2 = Integer.parseInt(st.nextToken());
 			int y1 = Integer.parseInt(st.nextToken());
+			int x2 = Integer.parseInt(st.nextToken());
 			int y2 = Integer.parseInt(st.nextToken());
 			
-			calc(x1, x2, y1, y2);
+			calc(x1, y1, x2, y2);
 		}
 		
 		br.close();
