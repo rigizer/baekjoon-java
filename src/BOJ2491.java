@@ -1,5 +1,7 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
 // https://www.acmicpc.net/problem/2491
@@ -15,9 +17,7 @@ public class BOJ2491 {
 				temp = num[i];
 				count++;
 				
-				if (count >= max) {
-					max = count;
-				}
+				max = Math.max(max, count);
 				continue;
 			}
 			
@@ -38,9 +38,7 @@ public class BOJ2491 {
 				temp = num[i];
 				count++;
 				
-				if (count >= max) {
-					max = count;
-				}
+				max = Math.max(max, count);
 				continue;
 			}
 			
@@ -53,6 +51,7 @@ public class BOJ2491 {
 	
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		int n = Integer.parseInt(br.readLine());
 		
 		StringTokenizer st = new StringTokenizer(br.readLine());
@@ -64,8 +63,11 @@ public class BOJ2491 {
 		int f = forward(n, num);
 		int b = backward(n, num);
 		
-		System.out.println(f >= b ? f : b);
+		
+		bw.write(String.valueOf(f >= b ? f : b));
 		
 		br.close();
+		bw.flush();
+		bw.close();
 	}
 }
