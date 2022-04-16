@@ -12,7 +12,7 @@ public class BOJ2635 {
 		int max = 2;
 		List<Integer> list = new ArrayList<>();
 		
-		for (int m = n / 2; m < n; m++) {
+		for (int m = n / 2; m <= n; m++) {
 			int tempN = n;
 			int tempM = m;
 			
@@ -23,8 +23,8 @@ public class BOJ2635 {
 			while(true) {
 				int diff = tempN - tempM;
 				
-				if (tempN - tempM >= 0) {
-					tmpList.add(tempN - tempM);
+				if (diff >= 0) {
+					tmpList.add(diff);
 					tempN = tempM;
 					tempM = diff;
 					continue;
