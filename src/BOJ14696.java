@@ -7,8 +7,7 @@ import java.util.StringTokenizer;
 // https://www.acmicpc.net/problem/14696
 
 public class BOJ14696 {
-	private static int[] inputArr() throws Exception {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	private static int[] inputArr(BufferedReader br) throws Exception {
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		int n = Integer.parseInt(st.nextToken());
 		
@@ -28,8 +27,8 @@ public class BOJ14696 {
 		
 		List<String> list = new ArrayList<>();
 		for (int round = 0; round < roundMax; round++) {
-			int[] arrA = inputArr();
-			int[] arrB = inputArr();
+			int[] arrA = inputArr(br);
+			int[] arrB = inputArr(br);
 			
 			boolean aWin = false;
 			boolean bWin = false;
