@@ -5,15 +5,13 @@ import java.util.StringTokenizer;
 // https://www.acmicpc.net/problem/2578
 
 public class BOJ2578 {
-	static int[][] c_arr;	// 철수 번호 입력
-	static int[][] m_arr;	// 사회자 번호 입력
+	static int[][] c_arr = new int[5][5];	// 철수 번호 입력
+	static int[][] m_arr = new int[5][5];	// 사회자 번호 입력
 	static int[][] b_arr = new int[5][5];	// 빙고 체크
 	
 	// 배열에 숫자 입력
-	private static int[][] inputNumber() throws Exception {
+	private static int[][] inputNumber(BufferedReader br) throws Exception {
 		int[][] arr = new int[5][5];
-		
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		for (int i = 0; i < 5; i++) {
 			StringTokenizer st = new StringTokenizer(br.readLine());
 			
@@ -104,8 +102,10 @@ public class BOJ2578 {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		c_arr = inputNumber();
-		m_arr = inputNumber();
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		c_arr = inputNumber(br);
+		m_arr = inputNumber(br);
 		
 		int idx = 0;
 		loopOut:
@@ -123,5 +123,7 @@ public class BOJ2578 {
 		}
 		
 		System.out.println(idx);
+		
+		br.close();
 	}
 }
