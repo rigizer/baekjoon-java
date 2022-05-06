@@ -12,23 +12,8 @@ public class BOJ2869 {
 		int b = Integer.parseInt(st.nextToken());
 		int v = Integer.parseInt(st.nextToken());
 		
-		int up = 0;
-		int day = 0;
-		while (true) {
-			day++;
-			
-			up += a;
-			
-			if (up >= v) {
-				break;
-			}
-			
-			up -= b;
-			
-			if (up >= v) {
-				break;
-			}
-		}
+		int day = (v - b) / (a - b);
+		if ((v - b) % (a - b) != 0) day++;
 		
 		System.out.println(day);
 	}
