@@ -6,12 +6,9 @@ import java.io.InputStreamReader;
 public class BOJ4999 {
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String j = br.readLine();
-		String d = br.readLine();
+		int j = br.readLine().length();
+		int d = br.readLine().length();
 		
-		int jsize = j.replace("h", "").trim().isEmpty() ? 0 : j.replace("h", "").trim().split("").length;
-		int dsize = d.replace("h", "").trim().isEmpty() ? 0 : d.replace("h", "").trim().split("").length;
-		
-		System.out.println(jsize >= dsize ? "go" : "no");
+		System.out.println(j >= d ? "go" : "no");
 	}
 }
